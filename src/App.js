@@ -34,13 +34,22 @@ class App extends Component {
 		}
 
     render() {
+    		// Inline style
+    		const style = {
+    			backgroundColor: 'white',
+    			font:'inherit',
+    			border: '1px solid blue',
+    			padding: '8px',
+    			cursor: 'pointer' 
+    		}
         return ( 
         	<div className="App">
 	        		<label> The Great Technology. </label>
 	            <h1> Hi i am react app5. </h1>   
 	            <p>This is really working fine.</p>
 
-	            <button onClick={this.switchNameHandler.bind(this, 'Pandurang Marathe', '52')}>Switch Name</button>	
+	            <button style   = {style} 
+	            				onClick = {this.switchNameHandler.bind(this, 'Pandurang Marathe', '52')}>Switch Name</button>	
 
 	            <Person name = {this.state.persons[0].name} 
 	            				age  = {this.state.persons[0].age}>
