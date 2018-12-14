@@ -51,20 +51,13 @@ class App extends Component {
     		}
     		let persons = null;
     		if (this.state.showPersons) {
-    			persons = (
+    		persons = (
     						<div>
-				            <Person name = {this.state.persons[0].name} 
-				            				age  = {this.state.persons[0].age}>
-				            				<strong>Hobbies: Football</strong>
-				            </Person>
-				            <Person name 	 = {this.state.persons[1].name} 
-				            				age  	 = {this.state.persons[1].age}
-				            			  click  = {this.switchNameHandler.bind(this, 'Tathya', '53')}
-				            			  change = {this.nameChangeHandler}>And My Hobbies : Singing, Dancing.
-				            </Person>
-				            <Person name = {this.state.persons[2].name} 
-				            				age  = {this.state.persons[2].age} />
-				        	</div>
+    								{this.state.persons.map(person => {
+    										return <Person name = {person.name} age = {person.age} /> 
+    								})}
+				           
+				        </div>
     				);
     		}
 
@@ -73,7 +66,6 @@ class App extends Component {
 	        		<label> The Great Technology. </label>
 	            <h1> Hi i am react app5. </h1>   
 	            <p>This is really working fine.</p>
-
 	            <button style   = {style} 
 	            				// onClick = {this.switchNameHandler.bind(this, 'Pandurang Marathe', '52')}>Switch Name
 	            				onClick = {this.togglePersonsHandler}>Toggle Name
