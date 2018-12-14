@@ -49,18 +49,10 @@ class App extends Component {
     			padding: '8px',
     			cursor: 'pointer' 
     		}
-        return ( 
-        	<div className="App">
-	        		<label> The Great Technology. </label>
-	            <h1> Hi i am react app5. </h1>   
-	            <p>This is really working fine.</p>
-
-	            <button style   = {style} 
-	            				// onClick = {this.switchNameHandler.bind(this, 'Pandurang Marathe', '52')}>Switch Name
-	            				onClick = {this.togglePersonsHandler}>Toggle Name
-	            </button>	
-	            { this.state.showPersons === true ?
-		            	<div>
+    		let persons = null;
+    		if (this.state.showPersons) {
+    			persons = (
+    						<div>
 				            <Person name = {this.state.persons[0].name} 
 				            				age  = {this.state.persons[0].age}>
 				            				<strong>Hobbies: Football</strong>
@@ -72,8 +64,21 @@ class App extends Component {
 				            </Person>
 				            <Person name = {this.state.persons[2].name} 
 				            				age  = {this.state.persons[2].age} />
-				        	</div> : null
-			      	}    				
+				        	</div>
+    				);
+    		}
+
+        return ( 
+        	<div className="App">
+	        		<label> The Great Technology. </label>
+	            <h1> Hi i am react app5. </h1>   
+	            <p>This is really working fine.</p>
+
+	            <button style   = {style} 
+	            				// onClick = {this.switchNameHandler.bind(this, 'Pandurang Marathe', '52')}>Switch Name
+	            				onClick = {this.togglePersonsHandler}>Toggle Name
+	            </button>	
+	            {persons}		
           </div>
         );
     }
