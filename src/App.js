@@ -12,7 +12,6 @@ class App extends Component {
 				otherState: 'Something other value',
 				showPersons: false
 		}
-
 		deletePersonHandler = (personIndex) => {
 				//const persons = this.state.persons.slice();
 				const persons = [...this.state.persons];  // Use spread operator for updating element.
